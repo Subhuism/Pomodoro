@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+# Pomodoro
+A customizable Pomodoro productivity application that lets users design their own focus protocol with configurable sessions, breaks, long breaks, auto-start functionality, session tracking, and task management, all wrapped in a responsive brutalist-inspired UI.
+>>>>>>> 6d0f20ca85c31e57e8b2a8e4f625f8a41b49282a
