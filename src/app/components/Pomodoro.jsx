@@ -16,11 +16,13 @@ const Pomodoro = () => {
     longBreakEvery: 4,
     longBreak: 15,
     autoStart:false,
+    ProtocolStarted: true,
   });
 
   const [currentSession, setCurrentSession] = useState(1);
   const [mode, setMode] = useState("focus");
   const [isComplete, setIsComplete] = useState(false);
+  const [protocolStarted, setProtocolStarted] = useState(false);
 
 
 
@@ -53,10 +55,14 @@ const Pomodoro = () => {
           <TaskPanel />
         </div>
       </div>
-      <SessionTracker />
+      <SessionTracker
+  currentSession={currentSession}
+  totalSessions={protocol.sessions}
+  protocolStarted={protocolStarted}
+/>
 
       <div>
-        <Preset setTime={setTime} setIsRunning={setIsRunning} protocol={protocol} setProtocol={setProtocol}/>
+        <Preset setTime={setTime} setIsRunning={setIsRunning} protocol={protocol} setProtocol={setProtocol} setProtocolStarted={setProtocolStarted} setMode={setMode} setCurrentSession={setCurrentSession} />
       </div>
 
     </>
