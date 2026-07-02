@@ -4,6 +4,7 @@ const SessionTracker = ({
   currentSession,
   totalSessions,
   protocolStarted,
+  themeColor,
 }) => {
 
   if (!protocolStarted) {
@@ -11,9 +12,9 @@ const SessionTracker = ({
   }
 
   return (
-    <div className="brutal-card p-6 mt-6">
+    <div className="brutal-card p-6 mt-6 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all"style={{ backgroundColor: themeColor, }}>
       <div className="flex justify-between items-center flex-wrap">
-        <h2 className="text-2xl font-black">
+        <h2 className="text-2xl font-black cursor-pointer">
           SESSION PROGRESS
         </h2>
       </div>
@@ -30,7 +31,7 @@ const SessionTracker = ({
               }`}
           />
         ))}
-        <h2 className='font-black text-xl text-pink-500'>{Math.floor((currentSession / totalSessions) * 100)}%</h2>
+        <h2 className='font-black text-xl text-pink-500 cursor-pointer'>{Math.floor((currentSession / totalSessions) * 100)}%</h2>
       </div>
     </div>
   );

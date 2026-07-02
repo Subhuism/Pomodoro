@@ -72,6 +72,7 @@ const Pomodoro = () => {
         currentSession={currentSession}
         totalSessions={protocol.sessions}
         protocolStarted={protocolStarted}
+        themeColor={themes[themeIndex]}
       />
 
       <div>
