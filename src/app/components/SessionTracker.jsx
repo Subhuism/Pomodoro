@@ -5,8 +5,8 @@ const SessionTracker = ({
   totalSessions,
   protocolStarted,
 }) => {
-  
-  if(!protocolStarted) {
+
+  if (!protocolStarted) {
     return null;
   }
 
@@ -24,14 +24,13 @@ const SessionTracker = ({
         }).map((_, i) => (
           <div
             key={i}
-            className={`w-8 h-8 border-2 border-black ${
-              i < currentSession
+            className={`w-8 h-8 border-2 border-black ${i < currentSession
                 ? "bg-pink-500"
                 : "bg-white"
-            }`}
+              }`}
           />
         ))}
-        <h2 className='font-black text-xl text-pink-500'>{Math.floor((currentSession/totalSessions)*100)}%</h2>
+        <h2 className='font-black text-xl text-pink-500'>{Math.floor((currentSession / totalSessions) * 100)}%</h2>
       </div>
     </div>
   );

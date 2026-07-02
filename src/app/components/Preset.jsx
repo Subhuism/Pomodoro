@@ -1,7 +1,7 @@
 "use client";
 import { React, useState } from 'react';
 
-const Preset = ({ setTime, setIsRunning, protocol, setProtocol, setProtocolStarted, setMode, setCurrentSession, }) => {
+const Preset = ({ setTime, setIsRunning, protocol, setProtocol, setProtocolStarted, setMode, setCurrentSession, themeColor }) => {
 
     const [customMinutes, setCustomMinutes] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -40,90 +40,92 @@ const Preset = ({ setTime, setIsRunning, protocol, setProtocol, setProtocolStart
 
 
     return (
-        <div className="grid md:grid-cols-4 gap-5">
-            <div className="brutal-card p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all">
-                <button onClick={() => {
-                    
-                    console.log("Before");
-                    setProtocol({
-                        focus: 25,
-                        break: 0,
-                        sessions: 1,
-                        longBreakEvery: 1,
-                        longBreak: 0,
-                        autoStart: false,
-                    });
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 ">
+            <div className="brutal-card dark:bg-green-500 hover:!bg-[#06B6D4] hover:cursor-pointer p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all" onClick={() => {
 
-                    setCurrentSession(1);
+                console.log("Before");
+                setProtocol({
+                    focus: 25,
+                    break: 0,
+                    sessions: 1,
+                    longBreakEvery: 1,
+                    longBreak: 0,
+                    autoStart: false,
+                });
 
-                    setMode("focus");
+                setCurrentSession(1);
 
-                    setTime(25 * 60);
+                setMode("focus");
 
-                    console.log("After");
+                setTime(25 * 60);
 
-                    setIsRunning(false);
+                console.log("After");
 
-                    setProtocolStarted(false);
-                }}>
-                    25 Focus
+                setIsRunning(false);
+
+                setProtocolStarted(false);
+            }} style={{ backgroundColor: themeColor, }}>
+                <button className='cursor-pointer'>
+                    25m Focus
                 </button>
             </div>
-            <div className="brutal-card p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all">
-                <button onClick={() => {
-                    setProtocol({
-                        focus: 0,
-                        break: 5,
-                        sessions: 1,
-                        longBreakEvery: 0,
-                        longBreak: 0,
-                        autoStart: false,
-                    });
+            <div className="brutal-card hover:!bg-[#06B6D4] hover:cursor-pointer p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all" onClick={() => {
+                setProtocol({
+                    focus: 0,
+                    break: 5,
+                    sessions: 1,
+                    longBreakEvery: 0,
+                    longBreak: 0,
+                    autoStart: false,
+                });
 
-                    setCurrentSession(1);
+                setCurrentSession(1);
 
-                    setMode("break");
+                setMode("break");
 
-                    setTime(5 * 60);
+                setTime(5 * 60);
 
-                    setIsRunning(false);
+                setIsRunning(false);
 
-                    setProtocolStarted(false);
-                }}>
-                    5 Break
+                setProtocolStarted(false);
+            }} style={{ backgroundColor: themeColor, }}>
+                <button className='cursor-pointer'>
+                    5m Break
                 </button>
             </div>
-            <div className="brutal-card p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all">
-                <button onClick={() => { setProtocol({
-                        focus: 0,
-                        break: 15,
-                        sessions: 1,
-                        longBreakEvery: 0,
-                        longBreak: 0,
-                        autoStart: false,
-                    });
+            <div className="brutal-card hover:!bg-[#06B6D4] hover:cursor-pointer p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all" onClick={() => {
+                setProtocol({
+                    focus: 0,
+                    break: 15,
+                    sessions: 1,
+                    longBreakEvery: 0,
+                    longBreak: 0,
+                    autoStart: false,
+                });
 
-                    setCurrentSession(1);
+                setCurrentSession(1);
 
-                    setMode("break");
+                setMode("break");
 
-                    setTime(15 * 60);
+                setTime(15 * 60);
 
-                    setIsRunning(false);
+                setIsRunning(false);
 
-                    setProtocolStarted(false);}}>
-                    15 Break
+                setProtocolStarted(false);
+            }} style={{ backgroundColor: themeColor, }}>
+                <button className='cursor-pointer'>
+                    15m Break
                 </button>
             </div>
-            <div className="brutal-card p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all">
-                <button onClick={() => setShowModal(true)}>
+            <div className="brutal-card hover:cursor-pointer hover:!bg-[#FDC700] p-6 mt-6 font-bold hover:-translate-x-1 hover:-translate-y-1 hover:shadow-none transition-all" onClick={() => setShowModal(true)} style={{ backgroundColor: themeColor, }}>
+                <button className='cursor-pointer' >
                     Custom
                 </button>
             </div>
             <>
 
                 {showModal && (
-                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center" onClick={() => setShowModal(false)}>
+                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center " onClick={() => setShowModal(false)}>
                         <div className=" brutal-card bg-white md:p-8 p-4 w-[70%] max-h-[90vh] max-w-2xl overflow-y-auto " onClick={(e) => e.stopPropagation()}>
                             <div className="flex justify-between items-center">
 
@@ -131,7 +133,7 @@ const Preset = ({ setTime, setIsRunning, protocol, setProtocol, setProtocolStart
                                     CUSTOM PROTOCOL
                                 </h2>
 
-                                <button onClick={() => setShowModal(false)} className="border-4 border-black px-3 py-1 font-bold">
+                                <button onClick={() => setShowModal(false)} className="border-4 border-black px-3 py-1 font-bold hover:!bg-red-500 cursor-pointer">
                                     X
                                 </button>
                             </div>
@@ -183,7 +185,7 @@ const Preset = ({ setTime, setIsRunning, protocol, setProtocol, setProtocolStart
                                 </label>
                             </div>
                             <div>
-                                <button className="mt-8 w-full border-4 border-black bg-pink-400 py-4 font-black text-lg" onClick={saveProtocol}>
+                                <button className="mt-8 w-full border-4 border-black bg-[#FDC700] py-4 font-black text-lg" onClick={saveProtocol}>
                                     START PROTOCOL
                                 </button>
                             </div>

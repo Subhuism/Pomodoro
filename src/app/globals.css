@@ -1,7 +1,29 @@
 @import "tailwindcss";
 
 body {
-  background-color: #e8f8f0;
+  /* background-color: #e8f8f0; */
+  /* background-color: #c6f8df; */
+  background-color: #cfe7da;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .04) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .04) 1px,
+      transparent 1px);
+
+  background-size: 32px 32px;
+}
+
+.brutal-card {
+  /* background-color: #371e09 !important; */
+  border: 4px solid black;
+  box-shadow:
+    8px 8px 0px black;
+}
+
+/* body {
+  background-color: #086a1c;
 
   background-image:
     linear-gradient(
@@ -15,11 +37,25 @@ body {
     );
 
   background-size: 32px 32px;
+} */
+
+/* .dark .brutal-card {
+  background: #1E293B;
+  color: #F8FAFC;
+  border: 4px solid #F6339A;
+  box-shadow: 8px 8px 0px #F6339A;
+  transition: all 0.2s ease;
+} */
+
+
+.brutal-card.hover {
+  background-color: #06B6D4;
+
 }
 
-.brutal-card{
-  background:white;
-  border:4px solid black;
+
+.buttons {
+  border: 4px solid black;
   box-shadow:
-  8px 8px 0px black;
+    8px 8px 0px black;
 }
